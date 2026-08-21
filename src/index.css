@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Public Sans', sans-serif;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Noto Serif', Georgia, serif;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+.material-symbols-outlined.fill-1 {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+@keyframes pulseEmergency {
+  0% {
+    transform: scale(0.96);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  }
+  70% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 24px rgba(220, 38, 38, 0);
+  }
+  100% {
+    transform: scale(0.96);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+.pulse-emergency {
+  animation: pulseEmergency 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes shimmerScan {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.ai-scan-glow {
+  background: linear-gradient(90deg, rgba(74, 103, 65, 0) 0%, rgba(74, 103, 65, 0.15) 50%, rgba(74, 103, 65, 0) 100%);
+  background-size: 200% 100%;
+  animation: shimmerScan 2s infinite linear;
+}
+

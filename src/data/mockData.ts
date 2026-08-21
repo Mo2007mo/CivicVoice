@@ -1,0 +1,193 @@
+import { Grievance, Initiative, UserProfile, FAQItem, ChatMessage } from '../types';
+
+export const INITIAL_PROFILE: UserProfile = {
+  name: 'Arjun Sharma',
+  ward: 'Ward 42',
+  city: 'New Delhi',
+  email: 'arjun.sharma@email.com',
+  phone: '+91 98765 43210',
+  aadhaarNumber: 'XXXX XXXX 1234',
+  isVerified: true,
+  avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
+  notificationSettings: {
+    sms: true,
+    email: true,
+    push: true,
+    emergencyAlerts: true,
+  },
+};
+
+export const INITIAL_FAQS: FAQItem[] = [
+  {
+    id: 'faq-1',
+    question: 'How do I propose a new initiative?',
+    answer: 'Navigate to the Proposals tab and click "Create". You will need 50 endorsements from verified neighborhood residents to reach the municipal review stage.',
+    category: 'proposals',
+  },
+  {
+    id: 'faq-2',
+    question: 'Who is eligible to vote on polls?',
+    answer: 'Any verified resident over the age of 16 living within the municipal boundaries is eligible to participate in community voting and ballot initiatives.',
+    category: 'voting',
+  },
+  {
+    id: 'faq-3',
+    question: 'When are the digital town hall meetings?',
+    answer: 'Digital town halls occur every second Tuesday of the month at 6:30 PM. Live links and agenda reminders are sent via email and in-app alert 24 hours prior.',
+    category: 'townhall',
+  },
+  {
+    id: 'faq-4',
+    question: 'Is my personal data shared with third parties?',
+    answer: 'No. CivicVoice is an official public-benefit municipal tool. Your personal identification is cryptographically hashed and used solely for authentic resident verification.',
+    category: 'privacy',
+  },
+  {
+    id: 'faq-5',
+    question: 'How does AI photo validation work for grievances?',
+    answer: 'When you upload an issue photo, our on-device and cloud AI checks that the photo is authentic (not AI-generated or manipulated), categorizes the distress type (e.g. pothole, broken streetlight), and automatically routes it to the designated Public Works department.',
+    category: 'reporting',
+  },
+  {
+    id: 'faq-6',
+    question: 'What happens during an Emergency SOS trigger?',
+    answer: 'Activating the SOS transmits your real-time GPS telemetry to the nearest municipal emergency dispatch and highlights your location to first responders while keeping your phone in beacon mode.',
+    category: 'reporting',
+  }
+];
+
+export const INITIAL_GRIEVANCES: Grievance[] = [
+  {
+    id: 'g-1',
+    ticketNumber: 'CIV-84920',
+    title: 'Deep Road Pothole on 5th Ave',
+    description: 'Hazardous deep pothole near intersection of 5th Ave and Main St causing traffic swerving and motorcycle tire risks.',
+    category: 'pothole',
+    status: 'In Progress',
+    department: 'Public Works & Roads',
+    location: '5th Ave & Elm St, Ward 42',
+    landmark: 'Opposite Central Pharmacy',
+    lat: 28.6139,
+    lng: 77.2090,
+    reportedDate: 'Yesterday, 4:15 PM',
+    verifiedReal: true,
+    imageUrl: 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=600&auto=format&fit=crop&q=80',
+    upvotes: 42,
+    hasUpvoted: true,
+  },
+  {
+    id: 'g-2',
+    ticketNumber: 'CIV-84812',
+    title: 'Flickering High-Mast Light #4092',
+    description: 'Streetlight pole tag #4092 has been flickering and completely dark for 3 consecutive nights near community park.',
+    category: 'broken_light',
+    status: 'Dispatched',
+    department: 'Electrical & Lighting Board',
+    location: '2nd Street & Pine Ave',
+    landmark: 'Near North Gate of Central Greens',
+    lat: 28.6152,
+    lng: 77.2115,
+    reportedDate: '2 days ago',
+    verifiedReal: true,
+    imageUrl: 'https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=600&auto=format&fit=crop&q=80',
+    upvotes: 19,
+    hasUpvoted: false,
+  },
+  {
+    id: 'g-3',
+    ticketNumber: 'CIV-84705',
+    title: 'Overflowing Recycling & Green Bins',
+    description: 'Community compost and dry waste bin cluster has not been cleared during scheduled Monday cycle.',
+    category: 'garbage',
+    status: 'Under Review',
+    department: 'Sanitation & Solid Waste',
+    location: 'Oak Ave & 4th Street',
+    landmark: 'Adjacent to Bus Stop #12',
+    lat: 28.6120,
+    lng: 77.2065,
+    reportedDate: '3 days ago',
+    verifiedReal: true,
+    imageUrl: 'https://images.unsplash.com/photo-1530587191325-3db32d826c18?w=600&auto=format&fit=crop&q=80',
+    upvotes: 28,
+    hasUpvoted: false,
+  },
+  {
+    id: 'g-4',
+    ticketNumber: 'CIV-84619',
+    title: 'Main Pipeline Water Seepage',
+    description: 'Clean drinking water line showing steady bubbling seepage across pedestrian sidewalk.',
+    category: 'water_leak',
+    status: 'Resolved',
+    department: 'Water Supply & Sewerage',
+    location: 'River Road & 1st Cross',
+    landmark: 'Behind Community Health Clinic',
+    lat: 28.6168,
+    lng: 77.2040,
+    reportedDate: '5 days ago',
+    verifiedReal: true,
+    imageUrl: 'https://images.unsplash.com/photo-1584467735815-f778f274e296?w=600&auto=format&fit=crop&q=80',
+    upvotes: 64,
+    hasUpvoted: true,
+  }
+];
+
+export const INITIAL_INITIATIVES: Initiative[] = [
+  {
+    id: 'init-1',
+    title: 'Protected Bicycle Lane along Green Belt Corridor',
+    description: 'Convert the outer shoulder of 5th Ave into a physical bollard-protected cycleway connecting Ward 42 schools to the metro hub.',
+    category: 'Mobility & Safety',
+    votesCount: 342,
+    targetVotes: 500,
+    daysLeft: 6,
+    author: 'Sunita Rao (Ward Green Committee)',
+    hasVoted: false,
+    status: 'Active Voting',
+  },
+  {
+    id: 'init-2',
+    title: 'Solar Powered Public LED Lighting & CCTV in Central Greens',
+    description: 'Install 24 autonomous solar lamp posts with motion-activated illumination for evening runners and women safety.',
+    category: 'Public Safety',
+    votesCount: 512,
+    targetVotes: 500,
+    daysLeft: 2,
+    author: 'Resident Welfare Association',
+    hasVoted: true,
+    status: 'Approved',
+  },
+  {
+    id: 'init-3',
+    title: 'Weekly Sunday Farmers & Artisan Market at Town Square',
+    description: 'Permit local organic produce and handicraft stalls with zero plastic mandate every Sunday morning from 7 AM to 1 PM.',
+    category: 'Community & Commerce',
+    votesCount: 289,
+    targetVotes: 400,
+    daysLeft: 12,
+    author: 'Civic Youth Forum',
+    hasVoted: false,
+    status: 'Active Voting',
+  }
+];
+
+export const INITIAL_CHAT_MESSAGES: ChatMessage[] = [
+  {
+    id: 'msg-1',
+    sender: 'assistant',
+    text: 'How can I help your neighborhood today with Gemini-powered civic support?',
+    timestamp: '10:00 AM',
+  },
+  {
+    id: 'msg-2',
+    sender: 'user',
+    text: 'I need to report a broken streetlight on 5th Ave.',
+    timestamp: '10:01 AM',
+  },
+  {
+    id: 'msg-3',
+    sender: 'assistant',
+    text: "I can help you with that! To file a report for a broken streetlight, I'll need a few more details.\n\nIs the pole number visible? (Usually a 4-5 digit number on a metal tag).",
+    timestamp: '10:01 AM',
+    suggestedAction: 'Report Issue',
+  }
+];
